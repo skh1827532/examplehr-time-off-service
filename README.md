@@ -21,10 +21,38 @@ COVERAGE.md           Generated coverage report
 
 ---
 
-## Quick start
+## Getting started
+
+### Prerequisites
+- **Node.js 20+** (check with `node --version`) — the only thing you need installed
+- macOS / Linux / Windows (WSL) — pure Node, no native build tools required beyond what `npm install` handles
+
+### If you received a zip
+```bash
+unzip examplehr-time-off-submission.zip
+cd ASSESSMENT-WIZDAA
+```
+
+### If you cloned from GitHub
+```bash
+git clone git@github.com:skh1827532/examplehr-time-off-service.git
+cd examplehr-time-off-service
+```
+
+### Then — same for both
+```bash
+npm install              # ~30s, installs dependencies into node_modules/
+npm test                 # ~6s, runs all 93 tests — should print "Tests: 93 passed, 93 total"
+npm run test:cov         # optional — generates HTML coverage report under coverage/
+```
+
+If `npm test` prints **`Tests: 93 passed, 93 total`** you're done verifying. The rest is for trying the running service.
+
+---
+
+## Quick start (run the live service)
 
 ```bash
-npm install
 cp .env.example .env
 
 # Run both services together (Mock HCM on :4000, Time-Off on :3000)
