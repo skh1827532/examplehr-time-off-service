@@ -17,8 +17,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
     "test:scenarios": "jest --testPathPattern=scenarios",
+    "test:unit": "jest --testPathPattern=\"(unit|spec\\.ts$)\" --testPathIgnorePatterns=scenarios",
     "coverage:report": "node scripts/generate-coverage-md.js"
   },
   "dependencies": {

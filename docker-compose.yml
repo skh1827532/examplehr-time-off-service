@@ -1,0 +1,26 @@
+services:
+  mock-hcm:
+    build:
+      context: .
+      target: mock-hcm
+    environment:
+      MOCK_HCM_PORT: 4000
+    ports:
+      - "4000:4000"
+
+  time-off-service:
+    build:
+      context: .
+      target: time-off-service
+    environment:
+      PORT: 3000
+      DATABASE_PATH: ":memory:"
+      HCM_BASE_URL: http://mock-hcm:4000
+      HCM_REQUEST_TIMEOUT_MS: 5000
+      HCM_MAX_RETRIES: 3
+      OUTBOX_WORKER_INTERVAL_MS: 2000
+      OUTBOX_MAX_ATTEMPTS: 8
+    depends_on:
+      - mock-hcm
+    ports:
+      - "3000:3000"
