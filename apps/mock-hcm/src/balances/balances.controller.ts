@@ -46,7 +46,7 @@ export class BalancesController {
     return b;
   }
 
-  @Get('balances/batch/full')
+  @Get('batch/balances')
   async batch() {
     await this.maybeDelay();
     if (this.failure.getMode() === 'DOWN') {

@@ -97,23 +97,28 @@ export async function createHarness(): Promise<Harness> {
         await locations.upsert({ locationId, name, country } as never);
       },
       async balance(employeeId, locationId, days) {
+        const hcmUpdatedAt = new Date().toISOString();
         await fetch(`${mockHcmUrl}/admin/seed/balances`, {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ balances: [{ employeeId, locationId, balanceDays: days }] }),
+          body: JSON.stringify({
+            balances: [{ employeeId, locationId, balanceDays: days, hcmUpdatedAt }],
+          }),
         });
         await balances.applyHcmBalance({
           employeeId,
           locationId,
           balanceDays: days,
-          hcmUpdatedAt: new Date().toISOString(),
+          hcmUpdatedAt,
         });
       },
       async hcmBalance(employeeId, locationId, days) {
         await fetch(`${mockHcmUrl}/admin/seed/balances`, {
           method: 'POST',
           headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ balances: [{ employeeId, locationId, balanceDays: days }] }),
+          body: JSON.stringify({
+            balances: [{ employeeId, locationId, balanceDays: days, hcmUpdatedAt: new Date().toISOString() }],
+          }),
         });
       },
     },

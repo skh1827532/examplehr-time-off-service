@@ -95,7 +95,7 @@ export class HcmClient {
       return { status: 'UNAVAILABLE', cause: 'circuit-open' };
     }
     try {
-      const { data } = await this.http.get<HcmBatchDto>('/balances/batch/full');
+      const { data } = await this.http.get<HcmBatchDto>('/batch/balances');
       this.noteSuccess();
       return { status: 'OK', data };
     } catch (e) {
