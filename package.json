@@ -18,8 +18,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:scenarios": "jest --testPathPattern=scenarios",
-    "test:unit": "jest --testPathPattern=\"(unit|spec\\.ts$)\" --testPathIgnorePatterns=scenarios",
-    "coverage:report": "node scripts/generate-coverage-md.js"
+    "test:unit": "jest --testPathPattern=\"(unit|spec\\.ts$)\" --testPathIgnorePatterns=scenarios"
   },
   "dependencies": {
     "@nestjs/axios": "^3.0.2",

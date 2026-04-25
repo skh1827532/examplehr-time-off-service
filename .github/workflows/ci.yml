@@ -18,12 +18,8 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run test:cov
-      - name: Generate COVERAGE.md
-        run: node scripts/generate-coverage-md.js
       - name: Upload coverage
         uses: actions/upload-artifact@v4
         with:
           name: coverage
-          path: |
-            coverage/
-            COVERAGE.md
+          path: coverage/

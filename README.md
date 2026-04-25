@@ -57,7 +57,6 @@ curl -X POST localhost:3000/time-off-requests \
 npm test                      # all 93 tests
 npm run test:scenarios        # only the S1–S11 acceptance scenarios
 npm run test:cov              # with coverage
-npm run coverage:report       # writes COVERAGE.md
 ```
 
 Current totals (see [COVERAGE.md](COVERAGE.md) for details):
