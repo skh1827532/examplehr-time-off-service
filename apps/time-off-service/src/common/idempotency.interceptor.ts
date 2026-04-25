@@ -55,7 +55,7 @@ export class IdempotencyInterceptor implements NestInterceptor {
                 key: fullKey,
                 scope,
                 payloadHash,
-                response: (body ?? {}) as Record<string, unknown>,
+                response: (body ?? {}) as never,
                 statusCode: res.statusCode,
               });
             } catch {
