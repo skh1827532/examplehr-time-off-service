@@ -2,6 +2,8 @@
 
 A NestJS microservice that owns the lifecycle of time-off requests for ExampleHR while keeping a faithful, eventually-consistent view of balances held in the customer's HCM (Workday, SAP, etc.).
 
+**Repository:** https://github.com/skh1827532/examplehr-time-off-service
+
 > **Documents:** [TRD.md](TRD.md) — full design rationale and alternatives considered. [COVERAGE.md](COVERAGE.md) — test coverage report.
 
 ---
